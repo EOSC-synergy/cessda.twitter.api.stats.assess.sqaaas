@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.7
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cessda/cessda.twitter.api.stats:
+      branch: main
+      repo: https://github.com/cessda/cessda.twitter.api.stats
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats git:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-chartreuse-flounder.sh
+        container: qc.acc_stuffy-charcoal-flounder
+  QC.Doc:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.pokey-puce-kakapo.sh
+        container: qc.doc_sleepy-xanthic-fowl
+      github.com/cessda/cessda.twitter.api.stats git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snappy-beige-bird.sh
+        container: qc.doc_jumpy-platinum-loon
+      github.com/cessda/cessda.twitter.api.stats markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-carmine-chamois.sh
+        container: qc.doc_paltry-linen-vole
+  QC.Lic:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.ugly-white-caracal.sh
+        container: qc.lic_droopy-orange-earwig
+  QC.Met:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.skimpy-fuchsia-frigatebird.sh
+        container: qc.met_flabby-gold-armadillo
+  QC.Sec:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.cozy-thistle-abyssinian.sh
+        container: qc.sec_slaphappy-viridian-squid
+  QC.Sty:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.stinky-rose-monster.sh
+        container: qc.sty_cranky-orange-hamster
+  QC.Ver:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.randy-aquamarine-bison.sh
+        container: qc.ver_hasty-sangria-audemer
+timeout: 5400
