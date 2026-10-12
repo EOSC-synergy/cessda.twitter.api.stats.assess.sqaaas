@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.8
+      branch: fix/updatego
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/cessda/cessda.twitter.api.stats:
       branch: main
@@ -15,50 +15,56 @@ sqa_criteria:
     repos:
       github.com/cessda/cessda.twitter.api.stats git:
         commands:
-        - /usr/bin/env sh .sqa/script.scaly-buff-crab.sh
-        container: qc.acc_muzzy-tangerine-monster
+        - /usr/bin/env sh .sqa/script.salmon_independent_cockatoo.sh
+        container: qc.acc_butter_radiant_roadrunner
   QC.Doc:
     repos:
       github.com/cessda/cessda.twitter.api.stats find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-cinnamon-fly.sh
-        container: qc.doc_woolly-tangerine-tamarin
+        - /usr/bin/env sh .sqa/script.aqua_analytical_bear.sh
+        container: qc.doc_onyx_agile_peacock
       github.com/cessda/cessda.twitter.api.stats git:
         commands:
-        - /usr/bin/env sh .sqa/script.chewy-turquoise-akita.sh
-        container: qc.doc_cranky-asparagus-angora
+        - /usr/bin/env sh .sqa/script.obsidian_passionate_griffin.sh
+        container: qc.doc_ice_proud_peacock
       github.com/cessda/cessda.twitter.api.stats markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.hilly-saffron-argentino.sh
-        container: qc.doc_crabby-chartreuse-bobcat
+        - /usr/bin/env sh .sqa/script.flax_thankful_quail.sh
+        container: qc.doc_walnut_mindful_seal
   QC.Lic:
     repos:
       github.com/cessda/cessda.twitter.api.stats licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-chestnut-tang.sh
-        container: qc.lic_lousy-saffron-swan
+        - /usr/bin/env sh .sqa/script.lemon_witty_eel.sh
+        container: qc.lic_persimmon_organized_cheetah
   QC.Met:
     repos:
       github.com/cessda/cessda.twitter.api.stats cff-converter-python:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-periwinkle-wildebeest.sh
-        container: qc.met_goopy-olivine-mayfly
+        - /usr/bin/env sh .sqa/script.smoke_spontaneous_groundhog.sh
+        container: qc.met_fern_tranquil_tiger
   QC.Sec:
     repos:
       github.com/cessda/cessda.twitter.api.stats bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-olive-civet.sh
-        container: qc.sec_tacky-coral-caiman
+        - /usr/bin/env sh .sqa/script.chestnut_driven_quoll.sh
+        container: qc.sec_cerulean_skeptical_coyote
   QC.Sty:
     repos:
       github.com/cessda/cessda.twitter.api.stats flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-aquamarine-harrier.sh
-        container: qc.sty_nippy-mustard-goose
+        - /usr/bin/env sh .sqa/script.arctic_candid_falcon.sh
+        container: qc.sty_mauve_bold_pegasus
+  QC.Uni:
+    repos:
+      github.com/cessda/cessda.twitter.api.stats pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.glaucous_sincere_turtle.sh
+        container: qc.uni_prussian_trustworthy_sphinx
   QC.Ver:
     repos:
       github.com/cessda/cessda.twitter.api.stats get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-tangerine-cassowary.sh
-        container: qc.ver_jumpy-cyan-chihuahua
+        - /usr/bin/env sh .sqa/script.peach_zealous_toad.sh
+        container: qc.ver_lilac_visionary_hare
 timeout: 5400
